@@ -243,15 +243,11 @@
         </div>
       </div>
       
-      <form class="contact-form" action="https://formspree.io/f/xzdoalgl" method="POST">
+      <form class="contact-form" id="contactForm">
         <h2>Send a message</h2>
-        
-        <input type="hidden" name="_next" value="thanks.html">
-        
         <input type="text" name="name" placeholder="Your name" required />
-        <input type="email" name="_replyto" placeholder="Your Gmail address" required />
+        <input type="email" name="email" placeholder="Your Gmail address" required />
         <textarea name="message" placeholder="Your feedback or message" required></textarea>
-        <input type="text" name="_gotcha" style="display:none" />
         <button type="submit">Send Message</button>
       </form>
     </div>
