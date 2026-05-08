@@ -44,13 +44,45 @@
   window.addEventListener("popstate", fromHash);
   fromHash();
 
-  // Contact form
+  // --- UPDATED CONTACT FORM LOGIC ---
   const form = document.getElementById("contactForm");
+  
   if (form) {
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async function(e) {
       e.preventDefault();
-      alert("Thank you! Your message has been received.");
-      form.reset();
+      
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      
+      // 1. Show the user something is happening
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = "Sending...";
+
+      // 2. Prepare the data
+      const data = new FormData(form);
+
+      // 3. Send to Formspree via AJAX (in the background)
+      fetch("https://formspree.io/f/xzdoalgl", {
+        method: "POST",
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          // 4. If successful, jump to your custom thanks.html page!
+          window.location.href = "thanks.html";
+        } else {
+          // If there's an error, let the user know
+          alert("Oops! There was a problem. Please try again.");
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+        }
+      }).catch(error => {
+        alert("Connection error. Please check your internet.");
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+      });
     });
   }
 })();
