@@ -217,7 +217,7 @@
     <div class="programs">
       <div class="program-card"><div class="program-icon" style="background:var(--brand-blue)">W</div><h3>Weekly Dance Training</h3><p>Mon–Fri, 4 PM – 9 PM. Building skill, focus and discipline.</p></div>
       <div class="program-card"><div class="program-icon" style="background:var(--brand-green)">M</div><h3>Mentorship Circles</h3><p>Older teens guide younger members through life skills.</p></div>
-      <div class="program-card"><div class="program-icon" style="background:var(--brand-yellow)">P</div><h3>Weekend Performances</h3><p>Creative projects and shows that strengthen teamwork.</p></div>
+      <div class="program-card"><div class="program-icon" style="background:var(--brand-blue-deep)">P</div><h3>Weekend Performances</h3><p>Creative projects and shows that strengthen teamwork.</p></div>
       <div class="program-card"><div class="program-icon" style="background:var(--brand-red)">E</div><h3>Education Support</h3><p>Helping members stay in school and dream beyond circumstances.</p></div>
       <div class="program-card"><div class="program-icon" style="background:var(--brand-blue-deep)">H</div><h3>Hub Communities</h3><p>Two active hubs in Kibera and Kabiria — and growing.</p></div>
       <div class="program-card"><div class="program-icon" style="background:var(--brand-green)">F</div><h3>Faith & Family</h3><p>A safe family rooted in faith, love, and freedom of expression.</p></div>
@@ -245,6 +245,9 @@
       
       <form class="contact-form" action="https://formspree.io/f/xzdoalgl" method="POST">
         <h2>Send a message</h2>
+        
+        <input type="hidden" name="_next" value="thanks.html">
+        
         <input type="text" name="name" placeholder="Your name" required />
         <input type="email" name="_replyto" placeholder="Your Gmail address" required />
         <textarea name="message" placeholder="Your feedback or message" required></textarea>
