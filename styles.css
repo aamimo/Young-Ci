@@ -250,3 +250,51 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 @media (max-width: 480px) {
   .masonry { columns: 1; }
 }
+
+/* Card Container Layout */
+.program-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0; /* Subtle border visible in IMG_0334.jpeg */
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Badge Icon Styles */
+.badge {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+}
+
+/* Color matching for the badges */
+.badge-rugby {
+    background-color: #0d3b94; /* Matches the Young City deep blue */
+}
+
+.badge-football {
+    background-color: #3cb055; /* Matches the Mentorship Circles green */
+}
+
+/* Typography styling */
+.program-title {
+    color: #0f172a;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
+
+.program-details {
+    color: #64748b;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+}
