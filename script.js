@@ -81,3 +81,40 @@
     });
   }
 })();
+
+
+// Dynamic 3D Interactive Tilt & Shine Effect for Support Cards
+const cards = document.querySelectorAll('.visual-tilt');
+
+cards.forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    
+    // Calculate accurate mouse position coordinate inside the card boundary bounding box
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    // Assign positional coordinates as custom CSS variables for our radial spot reflection element
+    card.style.setProperty('--mouse-x', `${x}px`);
+    card.style.setProperty('--mouse-y', `${y}px`);
+    
+    // Mathematical rotation coordinates mapping center point vectors (-0.5 to 0.5 ratio bounds)
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = ((y - centerY) / centerY) * -10; // Max tilt up/down up to 10 degrees
+    const rotateY = ((x - centerX) / centerX) * 10;  // Max tilt left/right up to 10 degrees
+    
+    // Apply smooth 3D transform values dynamically matrix-wide
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+    
+    // Dynamically illuminate border lines on tracking states using custom inline attribute color data
+    const hoverColor = card.getAttribute('data-color');
+    card.style.boxShadow = `0 15px 35px rgba(0, 0, 0, 0.3), 0 0 15px ${hoverColor}`;
+  });
+
+  // Re-center smoothly when mouse leaves the element frame area boundaries completely
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    card.style.boxShadow = 'none';
+  });
+});
