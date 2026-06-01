@@ -226,6 +226,102 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   padding: 14px; border-radius: 12px; color: #fff; font-weight: 600;
   background: var(--gradient-hero);
 }
+/* Premium Support Section Enhancements */
+.support-title {
+  margin-top: 12px;
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(45deg, #ffffff, #b3b3b3);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-top: 56px;
+  perspective: 1000px; /* Essential for the 3D tilt effect */
+}
+
+.support-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 32px;
+  overflow: hidden;
+  text-align: left;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+  transition: transform 0.1s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Subtle glowing background tracking */
+.card-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle 150px at var(--mouse-x, 0) var(--mouse-y, 0), rgba(255,255,255,0.06), transparent 80%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.card-content {
+  transform: translateZ(30px); /* Pushes layout content forward out of the glass background */
+  z-index: 2;
+  position: relative;
+}
+
+.card-icon {
+  font-size: 38px;
+  margin: 24px 0 12px 0;
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.support-card:hover .card-icon {
+  transform: scale(1.15) translateZ(10px);
+}
+
+.support-card p {
+  margin-top: 12px;
+  color: var(--muted, #a0a0a0);
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 90px; /* Keeps text fields and buttons uniform */
+}
+
+.support-btn {
+  margin-top: 24px;
+  padding: 12px 24px;
+  width: 100%;
+  text-align: center;
+  display: block;
+  box-sizing: border-box;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.support-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive collapse for tablets and mobile viewports */
+@media (max-width: 768px) {
+  .support-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .support-card {
+    transform: none !important; /* Disables tilt tracking on mobile screens for better accessibility */
+  }
+}
 
 /* Footer */
 .footer { background: var(--brand-blue-deep); color: rgba(255,255,255,0.9); margin-top: 80px; }
