@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Young City Crew | Performance & Partnerships</title>
+    <!-- Google Fonts for a clean, modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for professional icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #E50914; /* Young City Red */
+            --dark-color: #111111;
+            --light-bg: #f8f9fa;
+            --text-color: #333333;
+            --border-radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .booking-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #eeeeee;
+            padding-bottom: 20px;
+        }
+
+        .header-section h1 {
+            color: var(--dark-color);
+            font-size: 2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .header-section p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark-color);
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group input[type="date"],
+        .form-group input[type="time"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cccccc;
+            border-radius: var(--border-radius);
+            font-size: 0.95rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            background: #f1f1f1;
+            padding: 12px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .checkbox-label input {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+
+        .checkbox-label:hover {
+            background: #e1e1e1;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            background: var(--dark-color);
+            color: #ffffff;
+            border: none;
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-color);
+        }
+
+        /* Agreement Download Section Styling */
+        .agreement-box {
+            margin-top: 40px;
+            padding: 30px;
+            background: #fff5f5;
+            border: 2px dashed var(--primary-color);
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+
+        .agreement-box h3 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #ffffff;
+            padding: 12px 30px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 30px;
+            margin-top: 15px;
+            box-shadow: 0 4px 10px rgba(229, 9, 20, 0.2);
+            transition: transform 0.2s ease, background 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            background: #b8070f;
+        }
+
+        @media (max-width: 600px) {
+            .booking-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="booking-container">
+        
+        <!-- Header -->
+        <div class="header-section">
+            <h1>Event Booking Request</h1>
+            <p>Partner with Young City Crew for an unforgettable experience.</p>
+        </div>
+
+        <!-- Booking Form -->
+        <form action="#" method="POST">
+            
+            <!-- 1. Client Info -->
+            <div class="form-group">
+                <label for="client-name">Client / Organization Name</label>
+                <input type="text" id="client-name" name="client_name" placeholder="e.g., International School of Nairobi" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contact-email">Email Address</label>
+                <input type="email" id="contact-email" name="contact_email" placeholder="example@domain.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contact-phone">Phone Number[cite: 1]</label>
+                <input type="tel" id="contact-phone" name="contact_phone" placeholder="e.g., +254 700 000000" required>
+            </div>
+
+            <!-- 2. Event Details -->
+            <div class="form-group">
+                <label for="event-type">Event Name & Type[cite: 1]</label>
+                <input type="text" id="event-type" name="event_type" placeholder="e.g., Corporate Gala, Youth Festival" required>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="form-group">
+                    <label for="event-date">Event Date[cite: 1]</label>
+                    <input type="date" id="event-date" name="event_date" required>
+                </div>
+                <div class="form-group">
+                    <label for="event-time">Performance Time[cite: 1]</label>
+                    <input type="time" id="event-time" name="event_time" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="venue">Venue Name & Address[cite: 1]</label>
+                <textarea id="venue" name="venue" rows="2" placeholder="Provide full location and physical address details" required></textarea>
+            </div>
+
+            <!-- 3. Scope of Engagement -->
+            <div class="form-group">
+                <label>Scope of Engagement (Select all that apply)[cite: 1]</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="scope[]" value="Dance Performance"> Dance Performance[cite: 1]
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="scope[]" value="Youth Mentorship"> Youth Mentorship[cite: 1]
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="scope[]" value="Workshop"> Workshop / Team Building[cite: 1]
+                    </label>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Submit Booking Request</button>
+
+        </form>
+
+        <!-- 4. Mandatory Download Box -->
+        <div class="agreement-box">
+            <h3><i class="far fa-file-pdf"></i> Required Action: Download Agreement</h3>
+            <p style="font-size: 0.9rem; color: #555;">
+                To establish mutual logistics, technical terms, and booking safety, please download our official file <strong>"Young_City_Crew_Agreement_Clean.pdf"</strong> below[cite: 1]. Sign it and present it to your designated coordinator to confirm your slot[cite: 1].
+            </p>
+            <a href="assets/docs/Young_City_Crew_Agreement_Clean.pdf" download="Young_City_Crew_Agreement_Clean.pdf" class="download-btn">
+                <i class="fas fa-download"></i> Download Agreement Template[cite: 1]
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>
