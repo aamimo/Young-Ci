@@ -175,25 +175,6 @@
             background: #b8070f;
         }
 
-        /* Success Message Container */
-        #successMessage {
-            display: none;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        #successMessage i {
-            font-size: 4rem;
-            color: #28a745;
-            margin-bottom: 20px;
-        }
-
-        #successMessage h2 {
-            font-size: 1.8rem;
-            color: var(--dark-color);
-            margin-bottom: 15px;
-        }
-
         @media (max-width: 600px) {
             .booking-container {
                 padding: 20px;
@@ -205,129 +186,99 @@
 
     <div class="booking-container">
         
-        <!-- Form Content (Wrapped in a handle block) -->
-        <div id="formContainer">
-            <!-- Header -->
-            <div class="header-section">
-                <h1>Event Booking Request</h1>
-                <p>Partner with Young City Crew for an unforgettable experience.</p>
-            </div>
-
-            <!-- Booking Form using AJax to verify and send safely -->
-            <form id="bookingForm">
-                
-                <!-- 1. Client Info -->
-                <div class="form-group">
-                    <label for="client-name">Client / Organization Name</label>
-                    <input type="text" id="client-name" name="client_name" placeholder="e.g., International School of Nairobi" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="contact-email">Email Address</label>
-                    <input type="email" id="contact-email" name="contact_email" placeholder="example@domain.com" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="contact-phone">Phone Number</label>
-                    <input type="tel" id="contact-phone" name="contact_phone" placeholder="e.g., +254 700 000000" required>
-                </div>
-
-                <!-- 2. Event Details -->
-                <div class="form-group">
-                    <label for="event-type">Event Name & Type</label>
-                    <input type="text" id="event-type" name="event_type" placeholder="e.g., Corporate Gala, Youth Festival" required>
-                </div>
-
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                    <div class="form-group">
-                        <label for="event-date">Event Date</label>
-                        <input type="date" id="event-date" name="event_date" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="event-time">Performance Time</label>
-                        <input type="time" id="event-time" name="event_time" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="venue">Venue Name & Address</label>
-                    <textarea id="venue" name="venue" rows="2" placeholder="Provide full location and physical address details" required></textarea>
-                </div>
-
-                <!-- 3. Scope of Engagement -->
-                <div class="form-group">
-                    <label>Scope of Engagement (Select all that apply)</label>
-                    <div class="checkbox-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="scope[]" value="Dance Performance"> Dance Performance
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="scope[]" value="Youth Mentorship"> Youth Mentorship
-                        </label>
-                        <label class="checkbox-label">
-                            <input type="checkbox" name="scope[]" value="Workshop"> Workshop / Team Building
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Submit Button -->
-                <button type="submit" class="submit-btn" id="submitBtn">Submit Booking Request</button>
-
-            </form>
+        <!-- Header -->
+        <div class="header-section">
+            <h1>Event Booking Request</h1>
+            <p>Partner with Young City Crew for an unforgettable experience.</p>
         </div>
 
-        <!-- Inline Success Screen (Bypasses Formbold's Paid Redirect block safely) -->
-        <div id="successMessage">
-            <i class="fas fa-check-circle"></i>
-            <h2>Booking Submitted Successfully!</h2>
-            <p>Thank you for reaching out. Your request has been logged securely into our system.</p>
+        <!-- Booking Form configured to capture the submit action natively -->
+        <form action="https://formbold.com/s/oeYjK" method="POST" id="bookingForm">
             
-            <!-- 4. Mandatory Download Box directly inside the response -->
-            <div class="agreement-box">
-                <h3><i class="far fa-file-pdf"></i> Required Action: Download Agreement</h3>
-                <p style="font-size: 0.9rem; color: #555;">
-                    To establish mutual logistics, technical terms, and booking safety, please download our official file <strong>"Young_City_Crew_Agreement_Clean.pdf"</strong> below. Sign it and present it to your designated coordinator to confirm your slot[cite: 1].
-                </p>
-                <a href="assets/docs/Young_City_Crew_Agreement_Clean.pdf" download="Young_City_Crew_Agreement_Clean.pdf" class="download-btn">
-                    <i class="fas fa-download"></i> Download Agreement Template[cite: 1]
-                </a>
+            <!-- 1. Client Info -->
+            <div class="form-group">
+                <label for="client-name">Client / Organization Name</label>
+                <input type="text" id="client-name" name="client_name" placeholder="e.g., International School of Nairobi" required>
             </div>
+
+            <div class="form-group">
+                <label for="contact-email">Email Address</label>
+                <input type="email" id="contact-email" name="contact_email" placeholder="example@domain.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contact-phone">Phone Number</label>
+                <input type="tel" id="contact-phone" name="contact_phone" placeholder="e.g., +254 700 000000" required>
+            </div>
+
+            <!-- 2. Event Details -->
+            <div class="form-group">
+                <label for="event-type">Event Name & Type</label>
+                <input type="text" id="event-type" name="event_type" placeholder="e.g., Corporate Gala, Youth Festival" required>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="form-group">
+                    <label for="event-date">Event Date</label>
+                    <input type="date" id="event-date" name="event_date" required>
+                </div>
+                <div class="form-group">
+                    <label for="event-time">Performance Time</label>
+                    <input type="time" id="event-time" name="event_time" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="venue">Venue Name & Address</label>
+                <textarea id="venue" name="venue" rows="2" placeholder="Provide full location and physical address details" required></textarea>
+            </div>
+
+            <!-- 3. Scope of Engagement -->
+            <div class="form-group">
+                <label>Scope of Engagement (Select all that apply)</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="scope[]" value="Dance Performance"> Dance Performance
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="scope[]" value="Youth Mentorship"> Youth Mentorship
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="scope[]" value="Workshop"> Workshop / Team Building
+                    </label>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn" id="submitBtn">Submit Booking Request</button>
+
+        </form>
+
+        <!-- 4. Mandatory Download Box -->
+        <div class="agreement-box">
+            <h3><i class="far fa-file-pdf"></i> Required Action: Download Agreement</h3>
+            <p style="font-size: 0.9rem; color: #555;">
+                To establish mutual logistics, technical terms, and booking safety, please download our official file <strong>"Young_City_Crew_Agreement_Clean.pdf"</strong> below[cite: 1]. Sign it and present it to your designated coordinator to confirm your slot[cite: 1].
+            </p>
+            <a href="assets/docs/Young_City_Crew_Agreement_Clean.pdf" download="Young_City_Crew_Agreement_Clean.pdf" class="download-btn">
+                <i class="fas fa-download"></i> Download Agreement Template[cite: 1]
+            </a>
         </div>
 
     </div>
 
-    <!-- Secure AJAX Background Submission Script -->
+    <!-- Smart Free Redirection Script -->
     <script>
-        document.getElementById('bookingForm').addEventListener('submit', function(e) {
-            e.preventDefault(); 
+        document.getElementById('bookingForm').addEventListener('submit', function() {
+            var btn = document.getElementById('submitBtn');
+            btn.innerText = "Processing Request...";
+            btn.disabled = true;
             
-            var formContainer = document.getElementById('formContainer');
-            var successMessage = document.getElementById('successMessage');
-            var submitButton = document.getElementById('submitBtn');
-            
-            submitButton.innerText = "Sending Request...";
-            submitButton.disabled = true;
-
-            var formData = new FormData(this);
-
-            // Submits cleanly to FormBold endpoint via background request
-            fetch("https://formbold.com/s/oeYjK", {
-                method: "POST",
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(function(response) {
-                // Instantly swap the form out for the download dashboard panel seamlessly
-                formContainer.style.display = 'none';
-                successMessage.style.display = 'block';
-            })
-            .catch(function(error) {
-                // Fallback display if network drops out momentarily
-                formContainer.style.display = 'none';
-                successMessage.style.display = 'block';
-            });
+            // Wait just 1.5 seconds for the data packet to clear out to FormBold's server,
+            // then instantly push the browser to your landing page before the user leaves your site!
+            setTimeout(function() {
+                window.location.href = "submission.html";
+            }, 1500);
         });
     </script>
 
