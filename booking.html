@@ -192,11 +192,8 @@
             <p>Partner with Young City Crew for an unforgettable experience.</p>
         </div>
 
-        <!-- Booking Form pointed directly to FormBold -->
-        <form action="https://formbold.com/s/oeYjK" method="POST">
-            
-            <!-- Custom redirection to submission.html after a successful user submit -->
-            <input type="hidden" name="_next" value="https://aamimo.github.io/submission.html">
+        <!-- Booking Form configured to capture the submit action natively -->
+        <form action="https://formbold.com/s/oeYjK" method="POST" id="bookingForm">
             
             <!-- 1. Client Info -->
             <div class="form-group">
@@ -253,7 +250,7 @@
             </div>
 
             <!-- Submit Button -->
-            <button type="submit" class="submit-btn">Submit Booking Request</button>
+            <button type="submit" class="submit-btn" id="submitBtn">Submit Booking Request</button>
 
         </form>
 
@@ -269,6 +266,21 @@
         </div>
 
     </div>
+
+    <!-- Smart Free Redirection Script -->
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function() {
+            var btn = document.getElementById('submitBtn');
+            btn.innerText = "Processing Request...";
+            btn.disabled = true;
+            
+            // Wait just 1.5 seconds for the data packet to clear out to FormBold's server,
+            // then instantly push the browser to your landing page before the user leaves your site!
+            setTimeout(function() {
+                window.location.href = "submission.html";
+            }, 1500);
+        });
+    </script>
 
 </body>
 </html>
