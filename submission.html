@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Submitted | Young City Foundation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #E50914; /* Young City Red */
+            --dark-color: #111111;
+            --light-bg: #f8f9fa;
+        }
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Poppins', sans-serif; 
+        }
+        body {
+            background-color: var(--light-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .submission-card {
+            background: #ffffff;
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        
+        /* Logo Styling */
+        .brand-logo-container {
+            margin-bottom: 20px;
+        }
+        .brand-logo-container img {
+            width: 90px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 50%; /* Makes the logo a perfect circle */
+            border: 3px solid var(--primary-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .icon-success {
+            font-size: 3.5rem;
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+        h1 { 
+            color: var(--dark-color); 
+            margin-bottom: 15px; 
+            font-size: 1.8rem; 
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+        p { 
+            color: #555; 
+            line-height: 1.6; 
+            margin-bottom: 30px; 
+        }
+        .next-steps-box {
+            background: #fff5f5;
+            border: 2px dashed var(--primary-color);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: left; /* Left-aligned for better reading layout */
+        }
+        .next-steps-box h3 { 
+            color: var(--dark-color); 
+            margin-bottom: 10px; 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            margin: 5px;
+            font-size: 0.95rem;
+        }
+        .btn-download { 
+            background: var(--primary-color); 
+            color: #fff; 
+            box-shadow: 0 4px 12px rgba(229, 9, 20, 0.2);
+        }
+        .btn-download:hover { 
+            background: #b8070f; 
+            transform: translateY(-2px);
+        }
+        .btn-home { 
+            background: #e1e1e1; 
+            color: var(--dark-color); 
+        }
+        .btn-home:hover { 
+            background: #d1d1d1; 
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="submission-card">
+        <div class="brand-logo-container">
+            <img src="assets/logo.jpg" alt="Young City Foundation Logo">
+        </div>
+
+        <div class="icon-success"><i class="fas fa-check-circle"></i></div>
+        <h1>Request Received!</h1>
+        <p>Thank you for reaching out. Your event description and details have been transmitted and will be reviewed immediately by the <strong>Young City Management</strong>.</p>
+        
+        <div class="next-steps-box">
+            <h3><i class="far fa-file-pdf" style="color: var(--primary-color);"></i> Final Step: Download Agreement</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 0; color: #555;">
+                To establish mutual logistics, safety parameters, and hold your calendar slot, please download our official file <strong>"Young_City_Crew_Agreement_Clean.pdf"</strong> below. Kindly review, sign, and return a copy to your designated coordinator.
+            </p>
+            <div class="btn-container">
+                <a href="assets/docs/Young_City_Crew_Agreement_Clean.pdf" download="Young_City_Crew_Agreement_Clean.pdf" class="btn btn-download">
+                    <i class="fas fa-download"></i> Download Agreement Form
+                </a>
+            </div>
+        </div>
+
+        <a href="index.html" class="btn btn-home">Return to Homepage</a>
+    </div>
+
+</body>
+</html>
