@@ -1,3 +1,14 @@
+/* --- Force Light Mode for the Whole Website --- */
+:root {
+  color-scheme: light !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: light !important;
+  }
+}
+
 :root {
   --brand-blue: #2f63d4;
   --brand-blue-deep: #1d3f8f;
