@@ -118,3 +118,42 @@ cards.forEach(card => {
     card.style.boxShadow = 'none';
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll('.stat-num');
+  const speed = 100; // Lower numbers make it faster, higher numbers make it slower
+
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText.replace(/,/g, '').replace(/\+/g, '');
+
+      // Determine how fast to increment based on target size
+      const increment = target / speed;
+
+      if (count < target) {
+        // Add the increment value and round it up
+        const nextCount = Math.ceil(count + increment);
+        
+        // Format numbers cleanly as they count up
+        if (target === 1000) {
+          counter.innerText = nextCount.toLocaleString(); // Adds the comma for 1,000
+        } else if (target === 200) {
+          counter.innerText = nextCount + "+"; // Adds the plus sign back to 200+
+        } else {
+          counter.innerText = nextCount;
+        }
+
+        // Call function again after a micro-delay (approx 15-20ms)
+        setTimeout(updateCount, 15);
+      } else {
+        // Ensure it settles precisely on the exact target format at the finish
+        if (target === 1000) counter.innerText = "1,000";
+        else if (target === 200) counter.innerText = "200+";
+        else counter.innerText = target;
+      }
+    };
+
+    updateCount();
+  });
+});
