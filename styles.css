@@ -430,30 +430,28 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   }
 }
 
-/* Container for the two images */
+/* Container for the images */
 .photo-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Places them side-by-side */
-  gap: 16px;                      /* Spacing between the pictures */
-  align-items: center;
-  width: 100%;
+  display: flex;
+  flex-direction: column; /* Keeps them stacked on small screens */
+  gap: 16px;              /* Spacing between the stacked photos */
+  width: 100%;            /* Forces the grid to take up full available width */
 }
 
-/* Force the images into a clean landscape aspect ratio */
+/* Force the images to adopt a true landscape widescreen ratio */
 .photo-grid img {
-  width: 100%;
-  height: 250px;                 /* Fixed height forces the landscape shape */
-  object-fit: cover;             /* Crops perfectly without stretching the faces */
-  border-radius: 16px;           /* Clean rounded corners matching your app mockup */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Soft subtle shadow */
+  width: 100%;            /* Uses the full width of the phone screen */
+  aspect-ratio: 16 / 9;   /* Crucial: Forces a perfect landscape cinematic ratio */
+  object-fit: cover;      /* Fills the box cleanly without distortion */
+  border-radius: 16px;    /* Keeps your smooth rounded corners */
 }
 
-/* Responsive adjustment for small mobile screens */
-@media (max-width: 600px) {
+/* When the screen is wider (like tablets or laptops), put them side-by-side */
+@media (min-width: 768px) {
   .photo-grid {
-    grid-template-columns: 1fr;  /* Stacks them neatly on mobile while staying landscape */
+    flex-direction: row;  /* Places them side-by-side on desktop */
   }
   .photo-grid img {
-    height: 200px;               /* Slightly shorter height for smaller screens */
+    flex: 1;              /* Gives both images equal width */
   }
 }
