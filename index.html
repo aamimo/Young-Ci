@@ -35,9 +35,15 @@
 </header>
 
 <section class="page" id="page-home">
+  <!-- 1. HERO SECTION WITH SLIDESHOW -->
   <div class="hero">
+    <div class="hero-slideshow">
+      <div class="hero-slide" style="background-image:url('assets/photo8.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('assets/photo2.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('assets/photo20.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('assets/photo15.jpg')"></div>
+    </div>
     <div class="hero-bg"></div>
-    <div class="hero-img" style="background-image:url('assets/photo8.jpg')"></div>
     <div class="container hero-inner">
       <span class="badge">Faith · Family · Freedom</span>
       <h1> We Dance to Inspire, <span class="accent">Not to Compete.</span></h1>
@@ -51,35 +57,40 @@
   </div>
 
   <div class="container">
-   <div class="stats">
-  <div class="stat">
-    <div class="stat-num" data-target="200">0</div>
-    <div class="stat-label">Young Lives</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num" data-target="2">0</div>
-    <div class="stat-label">Active Hubs</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num" data-target="5">0</div>
-    <div class="stat-label">Days a Week</div>
-  </div>
-  <div class="stat">
-    <div class="stat-num" data-target="1000">0</div>
-    <div class="stat-label">Our Dream</div>
-  </div>
-</div>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num" data-target="200">0</div>
+        <div class="stat-label">Young Lives</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-target="2">0</div>
+        <div class="stat-label">Active Hubs</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-target="5">0</div>
+        <div class="stat-label">Days a Week</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" data-target="1000">0</div>
+        <div class="stat-label">Our Dream</div>
+      </div>
+    </div>
   </div>
 
+  <!-- 2. TWO-COLUMN SECTION WITH SLIDESHOW -->
   <div class="container section two-col">
     <div>
       <h2>A home of hope, discipline & creativity.</h2>
       <p class="lead">Founded in 2020 by Neville Nyamongo at just 11 years old, Young City has grown into a strong, loving community across Kibera and Kabiria — where dance becomes a bridge to education, peace and a brighter future.</p>
       <a href="#about" data-link="about" style="display:inline-block;margin-top:24px;color:var(--brand-blue);font-weight:600;">Read our full story →</a>
     </div>
-    <div class="photo-grid">
-      <img src="assets/photo5.jpg" alt="Mentorship" />
-      <img src="assets/photo15.jpg" alt="Community meal" />
+    <div class="two-col-slideshow-wrapper">
+      <div class="two-col-slideshow">
+        <div class="two-col-slide" style="background-image:url('assets/photo5.jpg')"></div>
+        <div class="two-col-slide" style="background-image:url('assets/photo15.jpg')"></div>
+        <div class="two-col-slide" style="background-image:url('assets/photo3.jpg')"></div>
+        <div class="two-col-slide" style="background-image:url('assets/photo6.jpg')"></div>
+      </div>
     </div>
   </div>
 
@@ -96,12 +107,21 @@
     </div>
   </div>
 
+  <!-- 3. CTA SECTION WITH SLIDESHOW -->
   <div class="container section">
     <div class="cta-card">
-      <div class="cta-img" style="background-image:url('assets/photo20.jpg')"></div>
-      <h2>Help us build a permanent home.</h2>
-      <p>Your support gives 200+ kids — and the 1,000 we dream of reaching — a safe place to train, learn, and lead.</p>
-      <a class="btn btn-yellow" style="margin-top:28px;" href="https://www.leetchi.com/fr/c/safe-place-for-young-city-crew-1609302" target="_blank" rel="noreferrer">Donate Now</a>
+      <div class="cta-slideshow">
+        <div class="cta-slide" style="background-image:url('assets/photo20.jpg')"></div>
+        <div class="cta-slide" style="background-image:url('assets/photo1.jpg')"></div>
+        <div class="cta-slide" style="background-image:url('assets/photo7.jpg')"></div>
+        <div class="cta-slide" style="background-image:url('assets/photo11.jpg')"></div>
+      </div>
+      <div class="cta-overlay"></div>
+      <div class="cta-content">
+        <h2>Help us build a permanent home.</h2>
+        <p>Your support gives 200+ kids — and the 1,000 we dream of reaching — a safe place to train, learn, and lead.</p>
+        <a class="btn btn-yellow" style="margin-top:28px;" href="https://www.leetchi.com/fr/c/safe-place-for-young-city-crew-1609302" target="_blank" rel="noreferrer">Donate Now</a>
+      </div>
     </div>
   </div>
 </section>
@@ -131,7 +151,7 @@
     </div>
 
     <h2 style="text-align:center;margin-top:80px;">Our Team</h2>
-    
+     
     <div class="ceo-card">
       <img src="assets/eugene.jpg" alt="Eugene Omondi, Bboy Noty" />
       <div class="ceo-info">
@@ -230,14 +250,14 @@
     <span class="eyebrow">Crew Portal</span>
     <h1 style="margin-top:12px;font-size:clamp(36px,6vw,72px);font-weight:800;letter-spacing:-0.02em;">Dance Crew Members</h1>
     <p class="lead">Welcome to the official Young City Foundation portal for crew updates, rehearsal schedules, and member resources.</p>
-    
+     
     <div class="two-col" style="margin-top: 48px;">
       <div class="value-card">
         <div class="bar" style="background: var(--brand-blue);"></div>
         <h3>Training & Rehearsals</h3>
         <p style="margin-top: 8px; color: var(--muted); font-size: 14px;">Access upcoming choreography schedules, intense training guidelines, and community workspace sessions.</p>
       </div>
-      
+       
       <div class="value-card">
         <div class="bar" style="background: var(--brand-green);"></div>
         <h3>Crew Announcements</h3>
@@ -286,7 +306,7 @@
           <a class="btn btn-primary support-btn" href="https://www.leetchi.com/fr/c/safe-place-for-young-city-crew-1609302" target="_blank" rel="noreferrer">Go to Fundraiser</a>
         </div>
       </div>
-      
+       
       <!-- Card 2: Equipment -->
       <div class="support-card visual-tilt" data-color="rgba(0,123,255,0.15)">
         <div class="card-glow"></div>
@@ -298,7 +318,7 @@
           <a class="btn btn-white support-btn" href="#contact" data-link="contact">Coordinate Gift</a>
         </div>
       </div>
-      
+       
       <!-- Card 3: Volunteer -->
       <div class="support-card visual-tilt" data-color="rgba(40,167,69,0.15)">
         <div class="card-glow"></div>
@@ -342,7 +362,7 @@
           <div class="row"><span class="icon">⏰</span>Mon–Fri · 4 PM – 9 PM</div>
         </div>
       </div>
-      
+       
       <form class="contact-form" id="contactForm">
         <h2>Send a message</h2>
         <input type="text" name="name" placeholder="Your name" required />
@@ -356,7 +376,7 @@
 
 <footer class="footer">
   <div class="footer-inner">
-    
+     
     <div class="footer-text-content">
       <div class="footer-column">
         <div class="brand-line"><img src="assets/logo.jpg" alt="" /><strong>Young City Foundation</strong></div>
