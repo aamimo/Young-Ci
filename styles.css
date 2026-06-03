@@ -171,10 +171,10 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 
 @keyframes twoColFadeLoop {
   0% { opacity: 0; }
-  6% { opacity: 1; }
-  25% { opacity: 1; }
-  31% { opacity: 0; }
-  100% { opacity: 0; }
+  3% { opacity: 1; }   /* Fades in quickly at the start of its turn */
+  25% { opacity: 1; }  /* Holds steady and stays fully visible for ~8 seconds */
+  28% { opacity: 0; }  /* Smoothly fades out as the next image starts */
+  100% { opacity: 0; } /* Stays hidden while the other 3 images take their turns */
 }
 
 .values-bg { background: #f3f5fa; }
