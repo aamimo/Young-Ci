@@ -119,6 +119,8 @@ cards.forEach(card => {
   });
 });
 
+
+//Counting in the home page
 document.addEventListener("DOMContentLoaded", () => {
   const statsSection = document.querySelector('.stats');
   const counters = document.querySelectorAll('.stat-num');
