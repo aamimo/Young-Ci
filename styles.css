@@ -430,28 +430,35 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   }
 }
 
-/* Container for the images */
+/* Reset the container to let items flow fully on mobile */
 .photo-grid {
-  display: flex;
-  flex-direction: column; /* Keeps them stacked on small screens */
-  gap: 16px;              /* Spacing between the stacked photos */
-  width: 100%;            /* Forces the grid to take up full available width */
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 20px 0 !important;
+  box-sizing: border-box !important;
 }
 
-/* Force the images to adopt a true landscape widescreen ratio */
+/* Force the images to adapt naturally to their original proportions */
 .photo-grid img {
-  width: 100%;            /* Uses the full width of the phone screen */
-  aspect-ratio: 16 / 9;   /* Crucial: Forces a perfect landscape cinematic ratio */
-  object-fit: cover;      /* Fills the box cleanly without distortion */
-  border-radius: 16px;    /* Keeps your smooth rounded corners */
+  display: block !important;
+  width: 100% !important;        /* Stretch fully across the available width */
+  max-width: 100% !important;
+  height: auto !important;       /* CRITICAL: Height automatically adapts to the photo's natural shape */
+  object-fit: contain !important; /* Ensures the entire original photo is visible without cropping */
+  border-radius: 12px !important;/* Rounded corners */
 }
 
-/* When the screen is wider (like tablets or laptops), put them side-by-side */
+/* Side-by-side layout for larger screens (Tablets & Desktops) */
 @media (min-width: 768px) {
   .photo-grid {
-    flex-direction: row;  /* Places them side-by-side on desktop */
+    flex-direction: row !important;
   }
   .photo-grid img {
-    flex: 1;              /* Gives both images equal width */
+    flex: 1 !important;
+    width: 50% !important;
   }
 }
