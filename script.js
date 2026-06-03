@@ -120,40 +120,77 @@ cards.forEach(card => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+  const statsSection = document.querySelector('.stats');
   const counters = document.querySelectorAll('.stat-num');
-  const speed = 100; // Lower numbers make it faster, higher numbers make it slower
+  
+  // TO REDUCE SPEED: Increase this number. 
+  // Higher = slower animation duration. Try 150 or 200 if you want it even slower.
+  const speedSetting = 180; 
 
-  counters.forEach(counter => {
-    const updateCount = () => {
-      const target = +counter.getAttribute('data-target');
-      const count = +counter.innerText.replace(/,/g, '').replace(/\+/g, '');
+  const startCounting = () => {
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText.replace(/,/g, '').replace(/\+/g, '');
 
-      // Determine how fast to increment based on target size
-      const increment = target / speed;
+        // Proportional step size based on our speed setting
+        const increment = target / speedSetting;
 
-      if (count < target) {
-        // Add the increment value and round it up
-        const nextCount = Math.ceil(count + increment);
-        
-        // Format numbers cleanly as they count up
-        if (target === 1000) {
-          counter.innerText = nextCount.toLocaleString(); // Adds the comma for 1,000
-        } else if (target === 200) {
-          counter.innerText = nextCount + "+"; // Adds the plus sign back to 200+
+        if (count < target) {
+          // Math.max(..., 1) ensures even small numbers like 2 and 5 keep moving smoothly
+          const nextCount = Math.ceil(count + Math.max(increment, 0.1));
+          
+          if (nextCount >= target) {
+            // Force it to lock exactly to target if it overshoots
+            finalizeCounter(counter, target);
+          } else {
+            // Format format dynamically during countdown
+            if (target === 1000) {
+              counter.innerText = nextCount.toLocaleString();
+            } else if (target === 200) {
+              counter.innerText = nextCount + "+";
+            } else {
+              counter.innerText = nextCount;
+            }
+            // A slightly longer delay (20ms instead of 15ms) slows down the ticks nicely
+            setTimeout(updateCount, 20);
+          }
         } else {
-          counter.innerText = nextCount;
+          finalizeCounter(counter, target);
         }
+      };
 
-        // Call function again after a micro-delay (approx 15-20ms)
-        setTimeout(updateCount, 15);
-      } else {
-        // Ensure it settles precisely on the exact target format at the finish
-        if (target === 1000) counter.innerText = "1,000";
-        else if (target === 200) counter.innerText = "200+";
-        else counter.innerText = target;
-      }
+      updateCount();
+    });
+  };
+
+  // Helper function to set exact final appearance
+  const finalizeCounter = (element, targetValue) => {
+    if (targetValue === 1000) element.innerText = "1,000";
+    else if (targetValue === 200) element.innerText = "200+";
+    else element.innerText = targetValue;
+  };
+
+  // Scroll Trigger Logic using Intersection Observer
+  if (statsSection) {
+    const observerOptions = {
+      root: null,         // Uses the screen viewport
+      threshold: 0.2      // Starts trigger when 20% of the stats container is visible
     };
 
-    updateCount();
-  });
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        // If the stats section enters the viewpoint area
+        if (entry.isIntersecting) {
+          startCounting();
+          observer.unobserve(entry.target); // Stops observing so it only animates once
+        }
+      });
+    }, observerOptions);
+
+    observer.observe(statsSection);
+  } else {
+    // Fallback if container class name is missing
+    startCounting();
+  }
 });
