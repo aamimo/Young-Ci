@@ -120,33 +120,37 @@ cards.forEach(card => {
 });
 
 
-//Counting in the home page
 document.addEventListener("DOMContentLoaded", () => {
   const statsSection = document.querySelector('.stats');
   const counters = document.querySelectorAll('.stat-num');
   
-  // TO REDUCE SPEED: Increase this number. 
-  // Higher = slower animation duration. Try 150 or 200 if you want it even slower.
+  // Base speed setting for large numbers (like 200 and 1,000)
   const speedSetting = 180; 
 
   const startCounting = () => {
     counters.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      
       const updateCount = () => {
-        const target = +counter.getAttribute('data-target');
         const count = +counter.innerText.replace(/,/g, '').replace(/\+/g, '');
 
-        // Proportional step size based on our speed setting
-        const increment = target / speedSetting;
+        // CALCULATE STEP SIZE:
+        // For small numbers (2 and 5), we force the increment to be exactly 1 
+        // so they tick up individual step-by-step instead of jumping to the end.
+        let increment;
+        if (target <= 10) {
+          increment = 1; 
+        } else {
+          increment = target / speedSetting;
+        }
 
         if (count < target) {
-          // Math.max(..., 1) ensures even small numbers like 2 and 5 keep moving smoothly
-          const nextCount = Math.ceil(count + Math.max(increment, 0.1));
+          const nextCount = Math.ceil(count + increment);
           
           if (nextCount >= target) {
-            // Force it to lock exactly to target if it overshoots
             finalizeCounter(counter, target);
           } else {
-            // Format format dynamically during countdown
+            // Format text dynamically during countdown
             if (target === 1000) {
               counter.innerText = nextCount.toLocaleString();
             } else if (target === 200) {
@@ -154,8 +158,12 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
               counter.innerText = nextCount;
             }
-            // A slightly longer delay (20ms instead of 15ms) slows down the ticks nicely
-            setTimeout(updateCount, 20);
+
+            // ADJUST DELAY BASED ON TARGET:
+            // Small numbers get a much longer delay (300ms) between numbers 
+            // so the user can actually see them count 1... 2... 3...
+            const currentDelay = target <= 10 ? 300 : 20;
+            setTimeout(updateCount, currentDelay);
           }
         } else {
           finalizeCounter(counter, target);
@@ -176,23 +184,21 @@ document.addEventListener("DOMContentLoaded", () => {
   // Scroll Trigger Logic using Intersection Observer
   if (statsSection) {
     const observerOptions = {
-      root: null,         // Uses the screen viewport
-      threshold: 0.2      // Starts trigger when 20% of the stats container is visible
+      root: null,
+      threshold: 0.2
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
-        // If the stats section enters the viewpoint area
         if (entry.isIntersecting) {
           startCounting();
-          observer.unobserve(entry.target); // Stops observing so it only animates once
+          observer.unobserve(entry.target);
         }
       });
     }, observerOptions);
 
     observer.observe(statsSection);
   } else {
-    // Fallback if container class name is missing
     startCounting();
   }
 });
