@@ -2,40 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
   <meta name="color-scheme" content="light">
-  <title>Volunteer with Us — Young City Foundation</title>
+  <title>Join the Movement: Volunteer with Young City Foundation 🌆</title>
   <meta name="description" content="Join the movement and volunteer with Young City Foundation in Nairobi, Kenya." />
   <link rel="icon" href="assets/logo.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    /* Styling to center the form cleanly on the page */
+  <script async src="https://tally.so/widgets/embed.js"></script>
+  <style type="text/css">
+    /* Styling to make the form clean and full page width */
     .form-container {
-      padding: 80px 24px;
-      max-width: 800px;
+      padding: 40px 0 0 0;
+      width: 100%;
+      max-width: 100%;
       margin: 0 auto;
       text-align: center;
     }
-  .form-wrapper {
-  margin-top: 40px;
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  overflow: hidden; /* This crops out anything outside the boundaries */
-  border: 1px solid rgba(0,0,0,0.05);
-  height: 480px;    /* Force a fixed height to cut off the very bottom badge */
-}
-
-iframe {
-  display: block;
-  width: 100%;
-  height: 550px;    /* Make the iframe slightly taller than its container wrapper */
-  border: 0;
-  margin-top: -10px;/* Slightly push the form up */
-}
+    .form-wrapper {
+      position: relative;
+      margin-top: 20px;
+      background: #ffffff;
+      overflow: hidden; 
+      width: 100%;
+      height: 75vh; /* Takes up the ideal full vertical screen view space */
+    }
+    iframe {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border: 0;
+      width: 100%;
+      height: 100%;
+    }
   </style>
 </head>
 <body>
@@ -59,16 +62,15 @@ iframe {
   </div>
 </header>
 
-<main class="container">
+<main class="container" style="max-width: 100%; padding: 0;">
   <div class="form-container">
     <span class="eyebrow" style="color: var(--brand-green); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">Join the Movement</span>
     <h1 style="margin-top:12px; font-size: clamp(32px, 5vw, 48px); font-weight: 800; letter-spacing: -0.02em;">Volunteer Application</h1>
-    <p class="lead" style="color: var(--muted); margin-top: 8px;">Ready to make a real difference? Drop your details below to become part of our volunteer team.</p>
+    <p class="lead" style="color: var(--muted); margin-top: 8px; padding: 0 24px;">Ready to make a real difference? Drop your details below to become part of our volunteer team.</p>
     
     <div class="form-wrapper">
-      <iframe src="https://tally.so/r/5BVK0E" title="Volunteer Application Form"></iframe>
-
-      </div>
+      <iframe data-tally-src="https://tally.so/r/5BVK0E?transparentBackground=1" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="Join the Movement: Volunteer with Young City Foundation 🌆"></iframe>
+    </div>
   </div>
 </main>
 
