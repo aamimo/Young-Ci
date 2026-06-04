@@ -1,55 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Join Us - Volunteer Portal</title>
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light">
+  <title>Volunteer with Us — Young City Foundation</title>
+  <meta name="description" content="Join the movement and volunteer with Young City Foundation in Nairobi, Kenya." />
+  <link rel="icon" href="assets/logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Styling to center the form cleanly on the page */
+    .form-container {
+      padding: 80px 24px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .form-wrapper {
+      margin-top: 40px;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    iframe {
+      display: block;
+      width: 100%;
+      height: 600px; /* Adjust height based on your form length */
+      border: 0;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 font-sans">
+<body>
 
-  <!-- (Insert your existing website Navbar Component here) -->
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html#home" class="brand">
+      <img src="assets/logo.jpg" alt="Young City Foundation logo" />
+      <div class="brand-text"><strong>Young City</strong><span>Foundation</span></div>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#gallery">Gallery</a>
+      <a href="index.html#members">Members</a>
+      <a href="index.html#programs">Programs</a>
+      <a href="index.html#support" class="active">Ways to Support</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary btn-donate-header" href="https://www.leetchi.com/fr/c/safe-place-for-young-city-crew-1609302" target="_blank" rel="noreferrer">Donate</a>
+  </div>
+</header>
 
-  <main class="max-w-4xl mx-auto px-4 py-12">
+<main class="container">
+  <div class="form-container">
+    <span class="eyebrow" style="color: var(--brand-green); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">Join the Movement</span>
+    <h1 style="margin-top:12px; font-size: clamp(32px, 5vw, 48px); font-weight: 800; letter-spacing: -0.02em;">Volunteer Application</h1>
+    <p class="lead" style="color: var(--muted); margin-top: 8px;">Ready to make a real difference? Drop your details below to become part of our volunteer team.</p>
     
-    <!-- Welcome Header -->
-    <div class="text-center mb-10">
-      <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">
-        Join the Movement
-      </h1>
-      <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-        Ready to make a real difference? Drop your details below to become part of our volunteer team.
-      </p>
+    <div class="form-wrapper">
+      <iframe src="https://tally.so/embed/YOUR_FORM_ID_HERE?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" title="Volunteer Application Form"></iframe>
+
+      </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-text-content">
+      <div class="footer-column">
+        <div class="brand-line"><img src="assets/logo.jpg" alt="" /><strong>Young City Foundation</strong></div>
+        <p>We Dance to Inspire, Not to Compete.</p>
+      </div>
+      <div class="footer-column">
+        <h4>Contact</h4>
+        <p>Nairobi, Kenya</p>
+        <p>+254 114 633 299</p>
+        <p>youngcitydancecrew@gmail.com</p>
+      </div>
+      <div class="footer-column">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="https://www.instagram.com/young_city_crew?igsh=MWE3b2VoNWE0ODBobg==" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://youtube.com/@youngcitydancekids?si=V7y2l3WD0FM87K48" target="_blank" rel="noreferrer">YouTube</a>
+          <a href="https://www.tiktok.com/@youngcitykids" target="_blank" rel="noreferrer">TikTok</a>
+        </div>
+      </div>
     </div>
-
-    <!-- Tally Form Container -->
-    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden p-2 sm:p-4">
-      
-      <!-- Tally Embed Code Starts Here -->
-      <iframe 
-        data-tally-src="https://tally.so/embed/YOUR_FORM_ID?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
-        loading="lazy" 
-        width="100%" 
-        height="600" 
-        frameborder="0" 
-        marginheight="0" 
-        marginwidth="0" 
-        title="Volunteer Application Form"
-        class="w-full border-0">
-      </iframe>
-      
-      <script>
-        // This script automatically communicates with Tally to adjust the height dynamically
-        var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.getAttribute("data-tally-src")}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
-      </script>
-      <!-- Tally Embed Code Ends Here -->
-
+    <div class="footer-map-column">
+      <div class="map-wrapper"> 
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.756578052187!2d36.77046411135767!3d-1.309342498679051!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1b004ce665d7%3A0x4cd782cf34fb74fb!2sMQRF%2BT736%20YOUNG%20CITY%20FOUNDATION%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1717433890000!5m2!1sen!2ske" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
     </div>
+  </div>
+  <div class="copy">© <span id="yr"></span> Young City Foundation</div>
+</footer>
 
-  </main>
-
-  <!-- (Insert your existing website Footer Component here) -->
-
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
 </body>
 </html>
