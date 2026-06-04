@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Us - Volunteer Portal</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+
+  <!-- (Insert your existing website Navbar Component here) -->
+
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    
+    <!-- Welcome Header -->
+    <div class="text-center mb-10">
+      <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight sm:text-5xl">
+        Join the Movement
+      </h1>
+      <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+        Ready to make a real difference? Drop your details below to become part of our volunteer team.
+      </p>
+    </div>
+
+    <!-- Tally Form Container -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden p-2 sm:p-4">
+      
+      <!-- Tally Embed Code Starts Here -->
+      <iframe 
+        data-tally-src="https://tally.so/embed/YOUR_FORM_ID?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+        loading="lazy" 
+        width="100%" 
+        height="600" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0" 
+        title="Volunteer Application Form"
+        class="w-full border-0">
+      </iframe>
+      
+      <script>
+        // This script automatically communicates with Tally to adjust the height dynamically
+        var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.getAttribute("data-tally-src")}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}
+      </script>
+      <!-- Tally Embed Code Ends Here -->
+
+    </div>
+
+  </main>
+
+  <!-- (Insert your existing website Footer Component here) -->
+
+</body>
+</html>
