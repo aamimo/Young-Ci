@@ -33,6 +33,13 @@
 
   links.forEach((l) =>
     l.addEventListener("click", (e) => {
+      const href = l.getAttribute("href");
+      
+      // FIX: If the link targets a separate HTML page file, skip single-page routing
+      if (href && href.endsWith('.html')) {
+        return; 
+      }
+
       e.preventDefault();
       const name = l.getAttribute("data-link");
       history.pushState(null, "", "#" + name);
