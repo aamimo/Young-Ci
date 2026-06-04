@@ -19,20 +19,23 @@
       margin: 0 auto;
       text-align: center;
     }
-    .form-wrapper {
-      margin-top: 40px;
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-      overflow: hidden;
-      border: 1px solid rgba(0,0,0,0.05);
-    }
-    iframe {
-      display: block;
-      width: 100%;
-      height: 600px; /* Adjust height based on your form length */
-      border: 0;
-    }
+  .form-wrapper {
+  margin-top: 40px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  overflow: hidden; /* This crops out anything outside the boundaries */
+  border: 1px solid rgba(0,0,0,0.05);
+  height: 480px;    /* Force a fixed height to cut off the very bottom badge */
+}
+
+iframe {
+  display: block;
+  width: 100%;
+  height: 550px;    /* Make the iframe slightly taller than its container wrapper */
+  border: 0;
+  margin-top: -10px;/* Slightly push the form up */
+}
   </style>
 </head>
 <body>
