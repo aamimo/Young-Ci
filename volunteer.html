@@ -105,6 +105,16 @@
   <div class="copy">© <span id="yr"></span> Young City Foundation</div>
 </footer>
 
-<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script>
+  // Set current year in footer
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // FIX: Force full page parent window redirect upon Tally Form submission
+  window.addEventListener('message', function(e) {
+    if (e.data && typeof e.data === 'string' && e.data.includes('Tally.FormSubmitted')) {
+      window.location.href = 'index.html';
+    }
+  });
+</script>
 </body>
 </html>
