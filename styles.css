@@ -95,13 +95,20 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .hero-slide {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
   background-size: cover; background-position: center; background-repeat: no-repeat;
-  opacity: 0; animation: slideshowFadeLoop 32s infinite ease-in-out;
+  opacity: 0; animation: heroFadeLoop 32s infinite ease-in-out;
 }
 .hero-slide:nth-child(1) { animation-delay: 0s; }
 .hero-slide:nth-child(2) { animation-delay: 8s; }
 .hero-slide:nth-child(3) { animation-delay: 16s; }
 .hero-slide:nth-child(4) { animation-delay: 24s; }
 
+@keyframes heroFadeLoop {
+  0% { opacity: 0; transform: scale(1); }
+  3% { opacity: 1; }
+  25% { opacity: 1; }
+  28% { opacity: 0; transform: scale(1.04); }
+  100% { opacity: 0; }
+}
 .hero-bg {
   position: absolute; inset: 0; background: var(--gradient-hero); z-index: 2; opacity: 0.75; mix-blend-mode: multiply;
 }
@@ -156,15 +163,15 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   background-repeat: no-repeat;
   background-color: transparent; 
   opacity: 0; 
-  animation: slideshowFadeLoop 32s infinite ease-in-out;
+  animation: twoColFadeLoop 32s infinite ease-in-out;
 }
 .two-col-slide:nth-child(1) { animation-delay: 0s; }
 .two-col-slide:nth-child(2) { animation-delay: 8s; }
 .two-col-slide:nth-child(3) { animation-delay: 16s; }
 .two-col-slide:nth-child(4) { animation-delay: 24s; }
 
-/* Shared 32-Second Smooth Slide Transition Sequence */
-@keyframes slideshowFadeLoop {
+/* Isolated 32-Second Smooth Slide Transition Sequence for Column 2 */
+@keyframes twoColFadeLoop {
   0% { opacity: 0; }
   3% { opacity: 1; }
   25% { opacity: 1; }
@@ -192,13 +199,20 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .cta-slide {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
   background-size: cover; background-position: center; background-repeat: no-repeat;
-  opacity: 0; animation: slideshowFadeLoop 32s infinite ease-in-out;
+  opacity: 0; animation: ctaFadeLoop 32s infinite ease-in-out;
 }
 .cta-slide:nth-child(1) { animation-delay: 0s; }
 .cta-slide:nth-child(2) { animation-delay: 8s; }
 .cta-slide:nth-child(3) { animation-delay: 16s; }
 .cta-slide:nth-child(4) { animation-delay: 24s; }
 
+@keyframes ctaFadeLoop {
+  0% { opacity: 0; }
+  3% { opacity: 1; }
+  25% { opacity: 1; }
+  28% { opacity: 0; }
+  100% { opacity: 0; }
+}
 .cta-overlay {
   position: absolute; inset: 0; background: var(--gradient-hero); opacity: 0.85; mix-blend-mode: multiply; z-index: 2;
 }
@@ -396,7 +410,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   .hero-inner { padding: 80px 0; }
   .stats { grid-template-columns: repeat(2, 1fr); }
   .two-col, .mv-grid, .contact-grid, .ceo-card { grid-template-columns: 1fr; gap: 32px; }
-  /* REMOVED layout constraint here so aspect-ratio fluidly handles responsive screens */
   .values { grid-template-columns: repeat(2, 1fr); }
   .programs { grid-template-columns: 1fr; }
   .masonry { columns: 2; }
