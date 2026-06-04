@@ -1,11 +1,11 @@
 /* --- Force Light Mode for the Whole Website --- */
 :root {
-  color-scheme: light !important;
+  color-scheme: light only !important;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    color-scheme: light !important;
+    color-scheme: light only !important;
   }
 }
 
