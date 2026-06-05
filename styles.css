@@ -430,3 +430,77 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   .masonry { columns: 1; }
   .stats { grid-template-columns: 1fr; }
 }
+
+/* Container for the entire standalone section */
+.showcase-video-section {
+  width: 100%;
+  padding: 60px 0; /* Creates breathing room above and below the video section */
+  background-color: #f9f9f9; /* Subtle background contrast from the rest of the page */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* The frame containing the video and text */
+.video-wrapper {
+  position: relative;
+  width: 90%; /* Keeps it from hitting the very edge of desktop screens */
+  max-width: 1000px; /* Limits the max width so it stays crisp and contained */
+  height: 500px; /* Dedicated height for the showcase */
+  border-radius: 12px; /* Smooth rounded corners for a modern look */
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Soft shadow to make it pop */
+  background-color: #000;
+}
+
+/* The standalone video element */
+.standalone-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures video fills its custom frame perfectly */
+  z-index: 1;
+  will-change: transform; /* Performance optimization */
+}
+
+/* Overlay layer centered over the video */
+.video-text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Sits over the video */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* A dark gradient tint so the white text reads clearly over bright spots in the video */
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)); 
+}
+
+/* Welcome Text Styling */
+.welcome-text {
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  padding: 0 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Extra drop shadow for readability */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .video-wrapper {
+    width: 95%;
+    height: 350px; /* Adjusts beautifully to a shorter height on mobile phones */
+  }
+  
+  .welcome-text {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+}
